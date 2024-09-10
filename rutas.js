@@ -1,58 +1,71 @@
-// rutas.js
-const express = require('express');
-const router = express.Router();
+const router = require('express').Router();
 const path = require('path');
 
 // Rutas principales
-router.get('/index.html', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+router.get('/nosotros', (req, res) => {
+    res.sendFile('./static/nosotros.html', {
+        root: __dirname
+    });
 });
 
-router.get('/nosotros.html', (req, res) => {
-    res.sendFile(path.join(__dirname, 'nosotros.html'));
+router.get('/Contactanos', (req, res) => {
+    res.sendFile('./static/Contactanos.html', {
+        root: __dirname
+    });
 });
 
-router.get('/servicios.html', (req, res) => {
-    res.sendFile(path.join(__dirname, 'servicios.html'));
+router.get('/', (req, res) => {
+    res.sendFile('./static/index.html', {
+        root: __dirname
+    });
 });
 
-router.get('/Contactanos.html', (req, res) => {
-    res.sendFile(path.join(__dirname, 'Contactanos.html'));
+router.get('/auditoria', (req, res) => {
+    res.sendFile('./static/auditoria.html', {
+        root: __dirname
+    });
 });
 
-router.get('/consultoria.html', (req, res) => {
-    res.sendFile(path.join(__dirname, 'consultoria.html'));
+router.get('/consultoria', (req, res) => {
+    res.sendFile('./static/consultoria.html', {
+        root: __dirname
+    });
 });
 
-router.get('/auditoria.html', (req, res) => {
-    res.sendFile(path.join(__dirname, 'auditoria.html'));
+router.get('/formacion', (req, res) => {
+    res.sendFile('./static/formacion.html', {
+        root: __dirname
+    });
 });
 
-router.get('/formacion.html', (req, res) => {
-    res.sendFile(path.join(__dirname, 'formacion.html'));
+router.get('/implementacion', (req, res) => {
+    res.sendFile('./static/implementacion.html', {
+        root: __dirname
+    });
 });
 
-router.get('/implementacion.html', (req, res) => {
-    res.sendFile(path.join(__dirname, 'implementacion.html'));
+router.get('/monitoreo', (req, res) => {
+    res.sendFile('./static/monitoreo.html', {
+        root: __dirname
+    });
 });
 
-router.get('/monitoreo.html', (req, res) => {
-    res.sendFile(path.join(__dirname, 'monitoreo.html'));
+router.get('/outsourcing', (req, res) => {
+    res.sendFile('./static/outsourcing.html', {
+        root: __dirname
+    });
 });
 
-router.get('/outsourcing.html', (req, res) => {
-    res.sendFile(path.join(__dirname, 'outsourcing.html'));
+router.get('/requerimientos', (req, res) => {
+    res.sendFile('./static/requerimientos.html', {
+        root: __dirname
+    });
 });
 
-router.get('/requerimientos.html', (req, res) => {
-    res.sendFile(path.join(__dirname, 'requerimientos.html'));
-});
-
-// Ruta para procesar el formulario de contacto
-router.post('/contacto.html', (req, res) => {
-    const { nombre, email, mensaje } = req.body;
-    console.log(`Mensaje de ${nombre} (${email}): ${mensaje}`);
-    res.send('¡Gracias por tu mensaje!');
+router.get('/servicios', (req, res) => {
+    res.sendFile('./static/servicios.html', {
+        root: __dirname
+    });
 });
 
 module.exports = router;
