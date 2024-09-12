@@ -116,7 +116,7 @@
                 <hr>
                 <p>Siéntase libre de contactarnos en cualquier momento. ¡Nos comunicaremos con usted tan pronto como podamos!</p>
                 <section id="contactanos" class="contain-form">
-                    <form id="cotizacion" action="https://formsubmit.co/richard.fernandez.a@tecsup.edu.pe" method="POST" enctype="multipart/form-data">
+                    <form id="cotizacion" action="/api/correo/send-email" method="POST">
                         <div class="input-group">
                             <input type="text" name="Nombres" id="Nombres" placeholder="Nombres" required>
                             <input type="text" name="Apellidos" id="Apellidos" placeholder="Apellidos" required>
@@ -127,16 +127,12 @@
                         </div>
                         <div class="input-group">
                             <input type="text" name="Empresa" id="Empresa" placeholder="Empresa" required>
-                            <input type="text" name="Asunto de Servicio" id="Servicio" placeholder="Asunto" required>
+                            <input type="text" name="Servicio" id="Servicio" placeholder="Asunto" required>
                         </div>
                         <textarea name="Descripcion" id="Descripcion" cols="10" rows="5" placeholder="Descripción de Servicio"></textarea>
-                        <div class="btn-group">
-                            <button id="send" class="btn-mail whatsapp" target="_blank" type="submit">Enviar WhatsApp <i class="fa-brands fa-whatsapp"></i></button>
-                            <button type="submit" class="btn-mail gmail">Enviar vía Mail <i class="fa-regular fa-envelope"></i></button>
-                        </div>
-                        <input type="hidden" name="_next" value="http://127.0.0.1:5500/index.html">
-                        <input type="hidden" name="_captcha" value="false">
+                        <button type="submit" class="btn-mail">Enviar vía Mail</button>
                     </form>
+                    
                 </section>
             </div>
         </div>
